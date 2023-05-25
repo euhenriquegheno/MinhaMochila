@@ -190,6 +190,7 @@ html {
   
     .lista {
       max-width: unset;
+      margin-top: 0.1em;
     }
   }
   
