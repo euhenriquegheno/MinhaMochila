@@ -2,6 +2,18 @@ const form = document.getElementById('novoItem');
 const lista = document.getElementById('lista');
 const itens = JSON.parse(localStorage.getItem("itens")) || [];
 
+const principal = document.querySelector('.principal');
+
+function ajustarTamanhoPrincipal() {
+    if (lista.childElementCount === 0) {
+        principal.classList.add('principal--tela-cheia');
+    } else {
+        principal.classList.remove('principal--tela-cheia');
+    }
+}
+
+ajustarTamanhoPrincipal();
+
 itens.forEach( (elemento) => {
     criaElemento(elemento);
 })
@@ -53,6 +65,7 @@ function criaElemento(item) {
     novoItem.appendChild(botaoDeleta(item.id));
 
     lista.appendChild(novoItem);
+    ajustarTamanhoPrincipal();
 }
 
 function atualizaElemento(item) {
@@ -72,6 +85,7 @@ function botaoDeleta(id) {
     // Adiciona um evento de clique à imagem
     elementoImg.addEventListener("click", function() {
         deletaElemento(this.parentNode, id);
+        ajustarTamanhoPrincipal();
     });
 
     return elementoImg;
