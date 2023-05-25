@@ -3,13 +3,21 @@ html {
     height: 100%;
     font-family: 'Roboto', cursive;
   }
+
+  .titulo__principal {
+    font-size: 32px;
+    font-family: Comic Sans MS;
+    text-align: center;
+    margin-bottom: 0;
+    color: #DDE6ED;
+  }
   
   .conteudo {
-    padding: 10vh 3em 0;
+    padding: 5vh 3em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2em;
+    gap: 0em;
   }
   
   .principal {
@@ -106,7 +114,7 @@ html {
   .lista {
     width: 100%;
     max-width: 600px;
-    margin: 0;
+    margin: 0 0 0 2em;
     padding: 0;
   }
   
