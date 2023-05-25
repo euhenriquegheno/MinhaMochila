@@ -14,6 +14,11 @@ function ajustarTamanhoPrincipal() {
 
 ajustarTamanhoPrincipal();
 
+function desabilitarZoom() {
+    var viewportMetaTag = document.querySelector('meta[name="viewport"]');
+    viewportMetaTag.setAttribute('content', 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no');
+}
+
 itens.forEach( (elemento) => {
     criaElemento(elemento);
 })
@@ -25,6 +30,8 @@ form.addEventListener("submit", (evento) => {
     const quantidade = evento.target.elements['quantidade']; //pega pelo nome do input de qtdeconst quantidade = 
 
     const existe = itens.find( elemento => elemento.nome === nome.value); //verifica se o elemento com o mesmo nome ja existe
+
+    desabilitarZoom();
 
     const itemAtual = {
         "nome": nome.value,
